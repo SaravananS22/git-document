@@ -131,3 +131,5 @@ $ git pull
 
 This structured documentation provides a clearer understanding of Git and GitHub usage, fixing grammatical errors and improving explanations where necessary.
 
+## Pull request
+!["Screenshot of a pull request on GitHub showing code changes, commit messages, and merge options."](images/example.png)
