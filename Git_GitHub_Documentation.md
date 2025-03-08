@@ -133,3 +133,94 @@ This structured documentation provides a clearer understanding of Git and GitHub
 
 ## Pull request
 !["Screenshot of a pull request on GitHub showing code changes, commit messages, and merge options."](images/example.png)
+
+# Git Commands Documentation
+
+## Overview
+This document explains the Git commands executed during a session in the `demo-repo` repository on the `quick-test` branch. The commands performed various Git operations, such as staging, committing, resetting, and checking logs.
+
+## Commands and Their Descriptions
+
+### 1. Checking the Status of the Repository
+```sh
+$ git status
+```
+- This command displays the current state of the working directory and staging area.
+- Initially, it showed that `README.md` was modified but not staged.
+
+### 2. Staging a File
+```sh
+$ git add README.md
+```
+- This command staged the `README.md` file, preparing it for commit.
+- Running `git status` again confirmed that the file was staged.
+
+### 3. Resetting the Staged File
+```sh
+$ git reset
+```
+- This command unstaged `README.md`, moving it back to an untracked state.
+- Running `git status` again confirmed that the file was no longer staged.
+
+### 4. Attempting an Invalid Git Add Command
+```sh
+$ git add -am "changes are done"
+```
+- This command resulted in an error because `git add` does not support the `-am` flag.
+- The correct approach is:
+  ```sh
+  $ git add .
+  $ git commit -m "changes are done"
+  ```
+  - `git add .` stages all changes.
+  - `git commit -m "message"` commits them with a message.
+
+### 5. Committing the Changes
+```sh
+$ git commit -m "new changes are done"
+```
+- This command committed the staged changes with the message "new changes are done."
+
+### 6. Resetting to the Previous Commit
+```sh
+$ git reset HEAD~1
+```
+- This command undid the last commit but retained the changes in the working directory.
+- Running `git status` showed `README.md` as modified but not staged.
+
+### 7. Viewing the Differences
+```sh
+$ git diff
+```
+- This command displayed the modifications made to `README.md`.
+
+### 8. Viewing the Commit Log
+```sh
+$ git log
+```
+- This command displayed the commit history, including previous commits and merges.
+
+### 9. Resetting to a Specific Commit
+```sh
+$ git reset 69ffae86a405b55e1df4ef82b8ea304dacdb90ff
+```
+- This command moved the repository back to a specific commit, unstaging `README.md` and `index.html`.
+
+### 10. Hard Resetting to a Specific Commit
+```sh
+$ git reset --hard 62e93837b943d907fcb85a8990f6fb239b568d98
+```
+- This command forcefully reset the repository to commit `62e9383`, discarding all changes after it.
+
+## Summary
+This session covered:
+- Checking repository status
+- Staging and unstaging files
+- Committing changes
+- Resetting commits (soft and hard resets)
+- Viewing commit history
+- Resolving an incorrect `git add` command
+
+Understanding these commands is crucial for efficient version control using Git.
+
+
